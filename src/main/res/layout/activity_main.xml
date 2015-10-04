@@ -1,0 +1,138 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/fragments_background_color"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar" />
+
+        <!-- The main content view -->
+        <android.support.v4.view.ViewPager
+            android:id="@+id/main_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/main_screen_facebook_signin"
+            android:layout_below="@+id/toolbar"
+            android:layout_marginBottom="@dimen/fragments_margings" />
+
+        <LinearLayout
+            android:id="@+id/main_screen_facebook_signin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/main_menu_button_bar"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.facebook.login.widget.LoginButton xmlns:loginView="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/facebook_login_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                loginView:com_facebook_login_text="@string/login"
+                loginView:com_facebook_logout_text="@string/logout" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_menu_button_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/main_menu_Button_panel_height"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/navigation_button_background_inactive"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/main_menu_button_padding"
+            android:weightSum="5">
+
+            <Button
+                android:id="@+id/main_menu_about_button"
+                style="android:buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/navigation_button_background_inactive"
+                android:drawableTop="@drawable/ic_home"
+                android:padding="@dimen/main_menu_button_padding"
+                android:text="@string/about"
+                android:textSize="@dimen/button_text_size" />
+
+            <Button
+                android:id="@+id/main_menu_gallery_button"
+                style="android:buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/navigation_button_background_inactive"
+                android:drawableTop="@drawable/ic_gallery"
+                android:padding="@dimen/main_menu_button_padding"
+                android:text="@string/gallery"
+                android:textSize="@dimen/button_text_size" />
+
+            <Button
+                android:id="@+id/main_menu_schedule_button"
+                style="android:buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/navigation_button_background_inactive"
+                android:drawableTop="@drawable/ic_make_appointment"
+                android:padding="@dimen/main_menu_button_padding"
+                android:text="@string/radio"
+                android:textSize="@dimen/button_text_size" />
+
+            <Button
+                android:id="@+id/main_menu_navigate_button"
+                style="android:buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/navigation_button_background_inactive"
+                android:drawableTop="@drawable/ic_navigate"
+                android:padding="@dimen/main_menu_button_padding"
+                android:text="@string/navigate"
+                android:textSize="@dimen/button_text_size" />
+
+            <Button
+                android:id="@+id/main_menu_sales_button"
+                style="android:buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/navigation_button_background_inactive"
+                android:drawableTop="@drawable/ic_sales"
+                android:padding="@dimen/main_menu_button_padding"
+                android:text="@string/bonus"
+                android:textSize="@dimen/button_text_size" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- The navigation drawer list -->
+    <RelativeLayout
+        android:id="@+id/side_menu_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start">
+
+        <ListView
+            android:id="@+id/drawer_list"
+            android:layout_width="@dimen/drawer_size"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:background="@color/drawer"
+            android:choiceMode="singleChoice"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0dp" />
+
+        <ImageView
+            android:id="@+id/powered_by"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/powered_by" />
+    </RelativeLayout>
+
+</android.support.v4.widget.DrawerLayout>

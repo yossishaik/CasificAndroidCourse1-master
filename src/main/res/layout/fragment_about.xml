@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fragments_background_color"
+    android:gravity="center_horizontal"
+    tools:context="app.MainActivity">
+
+    <ScrollView
+        android:id="@+id/schedule_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:fillViewport="true"
+        android:gravity="center_horizontal"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/fragments_background_color"
+            android:orientation="vertical"
+            tools:context="app.MainActivity">
+
+
+            <ImageView
+                android:id="@+id/about_logo"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fragment_top_logo_size"
+                android:layout_margin="@dimen/fragments_margings"
+                android:background="@color/fragments_background_color"
+                android:scaleType="fitXY"
+                android:src="@drawable/casific_logo" />
+
+            <TextView
+                android:id="@+id/about_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fragments_margings"
+                android:text="@string/about_text"
+                android:textColor="@color/fragments_text_color"
+                android:visibility="visible" />
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
